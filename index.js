@@ -25,6 +25,11 @@ app.get('/', function (req, res) {
 app.get('/getreels', function (req, res) {
  res.send('{"id":1,"Name":"nikhil","caption":"is anyone here"} ');
 });
+
+app.get('/gethtml', function (req, res) {
+ res.send(' <h1> html code </h1> ');
+});
+
 //listen to port 3000 by default
 app.listen(process.env.PORT || 3000);
  
