@@ -42,7 +42,7 @@ or
     So,
     Launch your app:
 
-    node index.js
+        node index.js
 
 ***  Confirm that port 3000 is open and accessible, as Node.js listens on that port by default.
       If port 3000 is unavailable, update your instance’s settings—and the security group rules—
