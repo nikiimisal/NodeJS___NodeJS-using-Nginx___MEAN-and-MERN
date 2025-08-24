@@ -21,7 +21,7 @@ A Smooth Node.js Kickoff
 
 or
 
-   ## Initialize your project: npm init -y (This auto-generates your package.json file)
+   Initialize your project: npm init -y (This auto-generates your package.json file)
 
 3. Install Dependencies
 
@@ -44,7 +44,7 @@ or
 
     node index.js
 
-###   Confirm that port 3000 is open and accessible, as Node.js listens on that port by default.
+***  Confirm that port 3000 is open and accessible, as Node.js listens on that port by default.
       If port 3000 is unavailable, update your instance’s settings—and the security group rules—
       to match the new port so your application remains reachable.
 
@@ -56,16 +56,15 @@ or
     Methods to Identify the Process on Port 3000
     Using lsof , Using netstat , Using ss , Using fuser etc.
     I'M using lsof
-
-    sudo lsof -i :3000
+    
+        sudo lsof -i :3000
 
    Terminate the Process
-
-   Using kill with the PID
-    Once you've identified the PID (e.g., 1234), terminate the process gracefully:
+        Using kill with the PID
+        Once you've identified the PID (e.g., 1234), terminate the process gracefully:
     
-     sudo kill 1234
-  If the process doesn't terminate, forcefully kill it:
+          sudo kill 1234
+If the process doesn't terminate, forcefully kill it:
       
        sudo kill -9 1234
     
