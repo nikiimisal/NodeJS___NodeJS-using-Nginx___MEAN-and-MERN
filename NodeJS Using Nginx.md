@@ -31,7 +31,11 @@ Finally, run your application with command<br>
      node index.js
 and you’re ready to go!<br> 
 
-# At this point, we should run it properly in the background.
+# At this point, we should run it properly in the background.<br>
+
+
+use of pm2 (Process Manager 2)..?<br>
+It helps you manage, monitor, and keep your applications running smoothly around the clock.<br>
 
 Now, use the following command to run it in the background.
 
