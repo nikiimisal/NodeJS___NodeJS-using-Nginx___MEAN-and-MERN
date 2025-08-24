@@ -30,3 +30,13 @@ Finally, run your application with command<br>
 
      node index.js
 and you’re ready to go!<br> 
+
+# At this point, we should run it properly in the background.
+
+Now, use the following command to run it in the background.
+
+     sudo npm install -g pm2
+     pm2 start index.js
+If any changes were made to the index.js file…
+
+     pm2 restart index.js
