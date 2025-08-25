@@ -10,16 +10,18 @@ Tools and Technologies Used
 
 <h1>STEPS INVOLVED</h1>
 
-• Step 0 - Preparing the Prerequisites
-• Step 1 - Install NodeJs
-• Step 2 - Install MongoDB
-• Step 3 - Install Express and Setup routes to the server
-• Step 4 - Access the routes with AngularJs
+• Step 0 - Preparing the Prerequisites<br>
+• Step 1 - Install NodeJs<br>
+• Step 2 - Install MongoDB<br>
+• Step 3 - Install Express and Setup routes to the server<br>
+• Step 4 - Access the routes with AngularJs<br>
 
 <h1>Step 0 - Preparing the Prerequisites</h1>
 <br>
-• AWS Account: Required to set up the Ubuntu server.
+• AWS Account: Required to set up the Ubuntu server.<br>
 • Knowledge requirements: Familiarity with HTML, CSS, and Javascript.
+<br>
+<br>
 <br>
 Set up Ubuntu Instance
 <br>
@@ -215,7 +217,7 @@ Mongoose will be used to establish a schema for the database to store data of ou
        module.exports = mongoose.model('Book', bookSchema);
 
 
-h1>Access the routes with AngularJs</h1>
+<h1>Access the routes with AngularJs</h1>
 
 AngularJS provides a web framework for creating dynamic views in your web applications.
 
