@@ -23,7 +23,8 @@ Tools and Technologies Used
 <br>
 <br>
 <br>
-Set up Ubuntu Instance
+Set up Ubuntu Instance<br>
+<br>
 <br>
 On AWS, Launch an EC2 with Ubuntu LTS 24, save the key pair to your device, or use an existing key pair if available<br>
 <br>
