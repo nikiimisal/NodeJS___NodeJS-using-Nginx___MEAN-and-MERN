@@ -20,10 +20,9 @@ Tools and Technologies Used
 <br>
 • AWS Account: Required to set up the Ubuntu server.<br>
 • Knowledge requirements: Familiarity with HTML, CSS, and Javascript.
-
+<br>
 <br>
 Set up Ubuntu Instance<br>
-<br>
 <br>
 On AWS, Launch an EC2 with Ubuntu LTS 24, save the key pair to your device, or use an existing key pair if available<br>
 <br>
