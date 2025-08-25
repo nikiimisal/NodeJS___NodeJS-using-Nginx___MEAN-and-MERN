@@ -416,6 +416,22 @@ AngularJS provides a web framework for creating dynamic views in your web applic
 
 
 
+<h1>Challenges and Obstacles Overcome</h1>
+MongoDB Installation Issues: During the installation of MongoDB, I encountered an issue where the database wouldn't install properly <br>
+due to an outdated package list. Running sudo apt update resolved the issue, allowing MongoDB to be successfully installed. <br>
+This experience highlighted the importance of ensuring that system packages are up-to-date before attempting software installations.<br>
+
+<h1>Lessons Learned</h1>
+Keep System Packages Updated: Encountering the MongoDB installation issue due to an outdated package list emphasized the need to<br>
+regularly update system packages. Running sudo apt update is an essential step before installing new software to avoid potential compatibility issues.<br><br>
+
+1. Systematic Troubleshooting: When facing an error, I learned to approach troubleshooting systematically by checking for common issues like package updates <br><br>ensuring, service statuses are active, and referring to documentation to quickly resolve problems.<br><br>
+
+2. Cloud Deployment Understanding: Deploying a full MEAN stack application on AWS EC2 gave me valuable insights into managing server-side applications<br>
+   in a cloud environment. It was essential to configure security groups correctly and ensure all necessary ports were open for proper access to the application.<br><br>
+
+By completing this project, I gained a deeper understanding of full-stack development and deployment on AWS, helping me further my DevOps knowledge.
+
 
 
 
