@@ -27,7 +27,7 @@ On AWS, Launch an EC2 with Ubuntu LTS 24, save the key pair to your device, or u
 <br>
 SSH into the instance.
 
-    ssh -i <your-key.pem> ec2-uesr@<your-ec2-public-ip>
+      ssh -i <your-key.pem> ec2-uesr@<your-ec2-public-ip>
 
 <h1>Step 1 - Install NodeJs</h1>
 
@@ -349,7 +349,7 @@ AngularJS provides a web framework for creating dynamic views in your web applic
        <body>
        <h1>Book Management</h1>
 
-     <!-- Form to add a new book -->
+        # <!-- Form to add a new book -->
         <h2>Add New Book</h2>
        <form ng-submit="add_book()"> <!-- Calls add_book() on form submission -->
         <table>
@@ -373,7 +373,7 @@ AngularJS provides a web framework for creating dynamic views in your web applic
         <button type="submit">Add Book</button> <!-- Button to submit form -->
        </form>
 
-    <!-- Display list of books -->
+        # <!-- Display list of books -->
        <h2>Book List</h2>
        <table>
         <thead>
