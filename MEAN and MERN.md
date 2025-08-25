@@ -20,8 +20,7 @@ Tools and Technologies Used
 <br>
 • AWS Account: Required to set up the Ubuntu server.<br>
 • Knowledge requirements: Familiarity with HTML, CSS, and Javascript.
-<br>
-<br>
+
 <br>
 Set up Ubuntu Instance<br>
 <br>
