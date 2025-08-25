@@ -50,18 +50,26 @@ The above commands will install Node.js and npm (Node Package Manager).
 
 <h1>Step 2 - Install MongoDB</h1>
 
-1. Download the GPG key for MongoDB:
+1. Import MongoDB’s GPG key
+   
+       curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg --dearmor
 
-       sudo apt-get install -y gnupg curl 
-       curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \ sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg \ --dearmor
+2. Create the MongoDB repository list
 
-2. Add the MongoDB repository to your system's package sources list:
+       echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -sc)/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
 
-       echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" |         sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
 
-3. Install MongoDB
+3. Update packages and install MongoDB
 
+       sudo apt-get update
        sudo apt-get install -y mongodb-org
+
+4. Start and enable MongoDB service
+
+       sudo systemctl start mongod
+       sudo systemctl enable mongod
+
+
 •  Running the above command failed to install MongoDB, due to an outdated package list. 
 
 •  To fix the above issue, simply run the command below to update the package list :
