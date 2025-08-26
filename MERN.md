@@ -50,6 +50,10 @@ The above commands will install Node.js and npm (Node Package Manager).
 
 <h1>Step 2 - Install MongoDB</h1>
 
+•   MongoDB install command 
+
+       sudo apt-get install -y mongodb-org
+
  . Remove the incorrect 7.0 repository file
 
        sudo rm /etc/apt/sources.list.d/mongodb-org-7.0.list
