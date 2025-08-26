@@ -50,25 +50,12 @@ The above commands will install Node.js and npm (Node Package Manager).
 
 <h1>Step 2 - Install MongoDB</h1>
 
-1. Import MongoDB’s GPG key
-   
-       curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg --dearmor
-
-2. Create the MongoDB repository list
-
-       echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu $(lsb_release -sc)/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
-
-
-3. Update packages and install MongoDB
+       sudo apt-get install -y gnupg curl
+       curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
+       sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
 
        sudo apt-get update
        sudo apt-get install -y mongodb-org
-
-4. Start and enable MongoDB service
-
-       sudo systemctl start mongod
-       sudo systemctl enable mongod
-
 
 •  Running the above command failed to install MongoDB, due to an outdated package list. 
 
@@ -78,7 +65,7 @@ The above commands will install Node.js and npm (Node Package Manager).
 
 •  Then the MongoDB install command again
 
-4. Start and enable the MongoDb service with the following commands:
+. Start and enable the MongoDb service with the following commands:
 
        sudo systemctl start mongod
    
@@ -86,22 +73,22 @@ The above commands will install Node.js and npm (Node Package Manager).
 
        sudo systemctl status mongod
    
-5. Install Body parser, which is used to handle form submissions and JSON data sent in POST requests:
+. Install Body parser, which is used to handle form submissions and JSON data sent in POST requests:
 
        sudo npm install body-parser
-6. Create a new folder and name it 'Books', change the directory to the Books directory:
+. Create a new folder and name it 'Books', change the directory to the Books directory:
 
        mkdir Books && cd Books
    
-7. In the Books directory, Initialize the npm project:
+. In the Books directory, Initialize the npm project:
 
        npm init
 
-8. Add a new file named server.js :
+. Add a new file named server.js :
 
        vi server.js
 
-9. Add the code below to server.js:
+. Add the code below to server.js:
 
        const express = require('express');
        const bodyParser = require('body-parser');
@@ -143,59 +130,77 @@ Mongoose will be used to establish a schema for the database to store data of ou
         mkdir apps && cd apps
 3. In apps folder, create a new file called routes.js:
    
-       vi route.js
+       vi routes.js
 4. Add the code below to routes.js:
 
          
-        const Book = require('./models/book'); // Import the Book model
-        const path = require('path'); // Import path module for serving static files
+        const Book = require('./models/book');
+       const path = require('path');
 
-        module.exports = function(app) {
-    
-        // GET request to fetch all books
-        app.get('/book', async (req, res) => {
-        try {
-            const books = await Book.find(); // Fetch all books from the database
-            res.json(books); // Send the books as a JSON response
-        } catch (err) {
-            res.status(500).json({ message: 'Error fetching books', error: err.message }); // Handle errors
-        }
+       module.exports = function(app) {
+
+       // GET request to fetch all books
+       app.get('/book', async (req, res) => {
+       try {
+          const books = await Book.find();
+       res.json(books);
+       } catch (err) {
+       res.status(500).json({
+        message: 'Error fetching books',
+        error: err.message
+       });
+       }
        });
 
        // POST request to add a new book
        app.post('/book', async (req, res) => {
-        try {
-            const book = new Book({
-                name: req.body.name, // Book name from request body
-                isbn: req.body.isbn, // ISBN from request body
-                author: req.body.author, // Author from request body
-                pages: req.body.pages // Pages from request body
-            });
-            const savedBook = await book.save(); // Save the new book to the database
-            res.status(201).json({ message: 'Successfully added book', book: savedBook }); // Send success response
-        } catch (err) {
-            res.status(400).json({ message: 'Error adding book', error: err.message }); // Handle errors
-        }
+       try {
+       const book = new Book({
+        name: req.body.name,
+        isbn: req.body.isbn,
+        author: req.body.author,
+        pages: req.body.pages
+       });
+       const savedBook = await book.save();
+       res.status(201).json({
+        message: 'Successfully added book',
+        book: savedBook
+       });
+       } catch (err) {
+       res.status(400).json({
+        message: 'Error adding book',
+        error: err.message
+       });
+       }
        });
 
-       // DELETE request to delete a book by its ISBN
+       // DELETE request to delete a book by ISBN
        app.delete('/book/:isbn', async (req, res) => {
-        try {
-            const result = await Book.findOneAndDelete({ isbn: req.params.isbn }); // Find and delete book by ISBN
-            if (!result) {
-                return res.status(404).json({ message: 'Book not found' }); // Handle case where book is not found
-            }
-            res.json({ message: 'Successfully deleted the book', book: result }); // Send success response
-        } catch (err) {
-            res.status(500).json({ message: 'Error deleting book', error: err.message }); // Handle errors
-        }
+       try {
+       const result = await Book.findOneAndDelete({
+        isbn: req.params.isbn
+       });
+       if (!result) {
+        return res.status(404).json({ message: 'Book not found' });
+       }
+       res.json({
+        message: 'Successfully deleted the book',
+        book: result
+       });
+       } catch (err) {
+       res.status(500).json({
+        message: 'Error deleting book',
+        error: err.message
+       });
+       }
        });
 
-       // Catch-all route to serve the frontend application (SPA)
-       app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../public', 'index.html')); // Serve index.html for any non-API routes
+       // Catch-all route (Express v5 requires a named wildcard)
+       app.get('/*splat', (req, res) => {
+       res.sendFile(path.join(__dirname, '../public', 'index.html'));
        });
        };
+
 
 
 5. In the apps folder, create a new folder called models:
@@ -415,11 +420,6 @@ AngularJS provides a web framework for creating dynamic views in your web applic
 7.  Start the server by running the command below:
 
         node server.js
-
-
-
-
-
 
 
 
