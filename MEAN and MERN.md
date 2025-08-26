@@ -229,7 +229,7 @@ Mongoose will be used to establish a schema for the database to store data of ou
        module.exports = mongoose.model('Book', bookSchema);
 
 
-<h1>Access the routes with AngularJs</h1>
+<h1>Step 4. Access the routes with AngularJs</h1>
 
 AngularJS provides a web framework for creating dynamic views in your web applications.
 
