@@ -175,10 +175,12 @@ Finally, the moment of truth—deploying the application:
 1. Install the Angular-cli:
 
         sudo npm install -g @angular/cli
-2. Clone the MEAN Stack project repository:
+2. Clone the MEAN Stack project repository:<br>
+   I have provided the project code as a zip file named sample-book-register-app-main.zip in the repository.
+   <br> Download it from there and upload it.
 
         git clone https://github.com/fmanimashaun/sample-book-register-app.git
-3. Set up the frontend:
+4. Set up the frontend:
 
        cd sample-book-register-app/client
    <br>
