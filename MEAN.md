@@ -33,16 +33,18 @@ Installing MongoDB was more involved than I initially thought. Here's what I did
        sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
 2. Created a MongoDB source list file:
 
-       echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-            7.0.list
+       echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
 3. Updated the package list and installed MongoDB:
 
        sudo apt-get update
+   <br>
+   
        sudo apt-get install -y mongodb-org
-4. Started MongoDB and enabled it to start on boot:
+5. Started MongoDB and enabled it to start on boot:
 
        sudo systemctl start mongod
        sudo systemctl enable mongod
-5. Verified the installation:
+6. Verified the installation:
 
        sudo systemctl status mongod
    >>Personal Note: The installation process was smooth, but I found the @official MongoDB documentation incredibly helpful. I'd recommend keeping it open in a separate tab for reference.
@@ -62,10 +64,10 @@ Configuring MongoDB for production use was crucial. Here’s what I learned:
    
 2. Secure the the Mongodb: Start MongoDB without authentication enabled:
 
-      mongosh
+        mongosh
 Connect to MongoDB and create the admin user:
 
-      use admin
+        use admin
  <br>
         
       use admin
