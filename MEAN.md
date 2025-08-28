@@ -1,4 +1,4 @@
-#Implementing MEAN Stack on AWS EC2 with Self-Hosted MongoDB: My Learning Journey
+<h1>Implementing MEAN Stack on AWS EC2 with Self-Hosted MongoDB: My Learning Journey</h1>
 
 This README documents my personal experience setting up a MEAN (MongoDB, Express, Angular, Node.js) stack application on an AWS EC2 instance for production, using a self-hosted MongoDB database. I’ll share insights, challenges, and lessons learned throughout the process.
 
