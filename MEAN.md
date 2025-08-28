@@ -17,11 +17,11 @@ This README documents my personal experience setting up a MEAN (MongoDB, Express
 
 Before starting this journey, I ensured I had:
 
-• An AWS EC2 instance running Ubuntu
-• Basic knowledge of Linux commands
-• A MEAN stack application ready for deployment
+• An AWS EC2 instance running Ubuntu<br>
+• Basic knowledge of Linux commands<br>
+• A MEAN stack application ready for deployment<br>
 
->>Personal Note: Setting up the EC2 instance was straightforward, but I recommend thoroughly understanding AWS security groups and network settings before proceeding.
+>>Personal Note: Setting up the EC2 instance was straightforward, but I recommend thoroughly understanding AWS security groups and network settings before proceeding.<br>
 >>Ensure that ports 5000 and 27017 are open in the security group.
 
 <h1>Srep 2: Installing MongoDB</h1>
@@ -55,13 +55,12 @@ Configuring MongoDB for production use was crucial. Here’s what I learned:
        sudo nano /etc/mongod.conf
  Changed the bindIp setting:
 
-       net:
-       bindIp: 0.0.0.0
+         net:
+         bindIp: 0.0.0.0
 >>Insight: While this allows remote connections, it’s essential to understand the security implications. In a real production environment, I would limit this to specific IP addresses. For my case, I kept the
-
-2. default configuration because there was no intention to communicate with MongoDB remotely.
+   default configuration because there was no intention to communicate with MongoDB remotely.
    
-Secure the the Mongodb: Start MongoDB without authentication enabled:
+2. Secure the the Mongodb: Start MongoDB without authentication enabled:
 
       mongosh
 Connect to MongoDB and create the admin user:
@@ -209,17 +208,17 @@ In my case, ubuntu is the linux user for the EC2 instance.
 1. Checked the process status:
 
        pm2 logs mean-app
-2. Accessed the application at http://<aws-ec2-instance-public-ip>
+2. Accessed the application at http://localhost
 
 
 
 <h1>Personal Reflections</h1>
-•  This process taught me a lot about full-stack deployment in a cloud environment.
+•  This process taught me a lot about full-stack deployment in a cloud environment.<br>
 •  The importance of security at every step cannot be overstated.<br>
-•  I now appreciate the complexity of setting up a production environment and the tools that help manage it.
+•  I now appreciate the complexity of setting up a production environment and the tools that help manage it.<br>
 •  In the future, I’d like to explore adding HTTPS, implementing proper logging, and setting up automated backups.
 <h1>Challenges I Faced</h1>
 
-• I initially ran into issues with MongoDB authentication. Careful reading of the documentation helped resolve this.
+• I initially ran into issues with MongoDB authentication. Careful reading of the documentation helped resolve this.<br>
 • Understanding the interaction between Nginx
        
