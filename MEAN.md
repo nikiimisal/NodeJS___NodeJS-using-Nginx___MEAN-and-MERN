@@ -168,7 +168,7 @@ Setting up Nginx as a reverse proxy was an enlightening experience:
 
    >>Insight: The symlink approach for managing Nginx configurations is elegant and makes it easy to enable or disable sites.
 
-<h1>Step 3: Deploying the MEAN Application</h1>
+<h1>Step 7: Deploying the MEAN Application</h1>
 
 Finally, the moment of truth—deploying the application:
 
@@ -181,14 +181,18 @@ Finally, the moment of truth—deploying the application:
 3. Set up the frontend:
 
        cd sample-book-register-app/client
+   <br>
+   
        sudo npm i && sudo npm run build
 >>Personal Note: Deploying a MEAN app to production without external services was quite interesting.
 
 4. Set up the backend:
 
         cd ../backend
+   <br>
+   
         sudo npm i
-5. Created the .env file inside the backend folder:
+6. Created the .env file inside the backend folder:
 
         sudo nano .env
 Content:
@@ -202,10 +206,26 @@ Content:
 6. Started the application with PM2:
 
         pm2 start index.js --name mean-app
-7. Kept the app running and ensured it restarted automatically after crashes or system reboots:
 
+   Boom start to run in websurfing<br>
+   Go to Browser and search http://localhost<br>
+   <br>
+8. Kept the app running and ensured it restarted automatically after crashes or system reboots:
+
+        pm2 list
+Go to step 7: point 3 & 4
+   <br>
+   
         pm2 startup
+
+ After typing this command, another command is displayed right there in PowerShell... we want to copy and paste that command right there itself.
+<br>
+Just like the one below:
+
         sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u <linux user> --hp /home/<linux user>
+<br>
+then save it this command
+
         pm2 save
 In my case, ubuntu is the linux user for the EC2 instance.
 >>Personal Note: Make sure you are inside the backend folder before running the command above.
