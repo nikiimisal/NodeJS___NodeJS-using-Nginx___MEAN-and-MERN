@@ -107,7 +107,7 @@ Restart the MongoDB service to apply the changes.
    >>Personal Note: Creating a specific user for the application, rather than using the root user, is a best practice I’m glad I followed. You can set your own password; Password.1 is used here for demonstration purposes.
    The resulting connection string:
 
-       mongodb://bookRegisterUser:Password.1@localhost:27017/sample_book_register_app?authSource=sample_book_register_app
+        mongosh mongodb://bookRegisterUser:Password.1@localhost:27017/sample_book_register_app?authSource=sample_book_register_app
 <h1>Step 4: Installing Node.js</h1>
 
 Installing Node.js was straightforward:
@@ -156,8 +156,13 @@ Setting up Nginx as a reverse proxy was an enlightening experience:
 
 3. Activated the new configuration and deactivated the default:
 
-        sudo ln -s /etc/nginx/sites-available/sample_book_register_app /etc/nginx/sites-enabled/
+         sudo ln -s /etc/nginx/sites-available/sample_book_register_app /etc/nginx/sites-enabled/
+
+   <br>
+   
         sudo nginx -t
+   <br>
+   
         sudo unlink /etc/nginx/sites-enabled/default
         sudo systemctl restart nginx
 
